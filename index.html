@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="welcome-screen" id="welcomeScreen">
+      <h1>Welcome to Tic-Tac-Toe Game Board</h1>
+      <form class="form">
+        <div class="my-form">
+          <div>
+            <label for="player-1">Player 1:</label><br />
+            <input type="text" id="playerOne" name="name" /><br />
+          </div>
+          <div>
+            <label for="player-1">Player 2:</label><br />
+            <input type="text" id="playerTwo" name="name" /><br />
+          </div>
+        </div>
+        <button id="startButton">Start Game</button>
+      </form>
+    </div>
+    <div class="board" id="board">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
+    <div class="winning-message" id="winningMessage">
+      <div data-winning-message-text></div>
+      <button id="restartButton">Restart</button>
+    </div>
+  </body>
+</html>
