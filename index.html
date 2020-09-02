@@ -8,17 +8,17 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <div class="welcome-screen" id="welcomeScreen">
-      <h1>Welcome to Tic-Tac-Toe Game Board</h1>
+    <h1 class="heading">Tic Tac Toe</h1>
+    <div class="my-form">
       <form class="form">
-        <div class="my-form">
+        <div class="form-input">
           <div>
-            <label for="player-1">Player 1:</label><br />
-            <input type="text" id="playerOne" name="name" /><br />
+            <label for="name">Player 1:</label>
+            <input type="text" placeholder="Enter your name" />
           </div>
           <div>
-            <label for="player-1">Player 2:</label><br />
-            <input type="text" id="playerTwo" name="name" /><br />
+            <label for="name">Player 2:</label>
+            <input type="text" placeholder="Enter your name" />
           </div>
         </div>
         <button id="startButton">Start Game</button>
@@ -37,7 +37,7 @@
     </div>
     <div class="winning-message" id="winningMessage">
       <div data-winning-message-text></div>
-      <button id="restartButton">Restart</button>
+      <button class="restart" id="restartButton">Restart</button>
     </div>
   </body>
 </html>
