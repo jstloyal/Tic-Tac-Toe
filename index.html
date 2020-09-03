@@ -10,11 +10,22 @@
   <body>
     <h1 class="heading">Tic Tac Toe</h1>
     <div class="my-form">
-      <div class="inputs">
-        <input type="text" placeholder="PLAYER 1" id="player1" />
-        <input type="text" placeholder="PLAYER 2" id="player2" />
+      <div class="inputsContainer" id="inputsContainer">
+        <div class="inputs">
+          <input type="text" placeholder="PLAYER 1" id="player1" />
+          <input type="text" placeholder="PLAYER 2" id="player2" />
+        </div>
+        <button id="startButton">Start Game</button>
       </div>
-      <button id="startButton">Start Game</button>
+
+      <div class="gameDetails" id="gameDetails">
+        <div>
+          <p id="playerOneName"></p>
+          <p id="playerTwoName"></p>
+        </div>
+        <div id="playerTurn">Player1 it is your turn.</div>
+      </div>
+      
     </div>
     <div class="board" id="board">
       <div class="cell" data-cell></div>

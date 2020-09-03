@@ -41,9 +41,14 @@ body {
   margin-top: 20px;
 }
 
+.gameDetails {
+  display: none;
+  font-size: 25px;
+}
+
 .board {
   width: 100vw;
-  height: 40vh;
+  /* height: 40vh; */
   display: grid;
   justify-content: center;
   justify-items: center;
