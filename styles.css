@@ -16,13 +16,22 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 25px;
-}
-
-.form {
   text-align: center;
 }
 
-.form button,
+.inputs {
+  text-align: center;
+}
+
+.inputs input {
+  padding: 20px;
+  color: #000;
+  font-size: 1rem;
+  border: 1px solid grey;
+  outline-style: none;
+}
+
+.my-form button,
 .restart {
   padding: 10px;
   background-color: black;
@@ -30,19 +39,6 @@ body {
   font-size: 30px;
   font-weight: 400;
   margin-top: 20px;
-}
-
-.form-input {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-right: 100px;
-  margin-left: 100px;
-}
-
-label,
-input {
-  font-size: 20px;
 }
 
 .board {
