@@ -1,6 +1,16 @@
 const playerFactory = (name, symbol) => {
+  let playerTurn = boardArray => {
+    let count = 0;
 
-  return {name, symbol}
+    for(let i = 0; i < boardArray.length; i++){
+      if(boardArray[i] === 'X' || boardArray[i] === 'O'){
+        count++;
+      }
+    }
+
+    return count % 2 === 0 ? 1 : 2
+  }
+  return {name, symbol, playerTurn}
 }
 
 const board = (() => {
@@ -13,9 +23,31 @@ const playGame = (() => {
   let playerOneName = document.getElementById('player1').value;
   let playerTwoName = document.getElementById('player2').value;
   let startButton = document.getElementById('startButton');
+  let boardDiv = document.getElementById('board');
   let playerOne;
   let playerTwo;
   let currentPlayer;
+
+  function switchCurrentUser(boardArray){
+    let count = 0;
+
+    for(let i = 0; i < boardArray.length; i++){
+      if(boardArray[i] === 'X' || boardArray[i] === 'O'){
+        count++;
+      }
+    }
+
+    count % 2 === 0 ? currentPlayer = playerOne : currentPlayer = playerTwo;
+  }
+
+  boardDiv.addEventListener('click', (e) => {
+    if(e.target.innerHTML == ""){
+      var index = e.target.getAttribute('data-index');
+      e.target.innerHTML = currentPlayer.symbol;
+      board.boardArray[index] = currentPlayer.symbol
+      switchCurrentUser(board.boardArray)
+    }
+  })
 
   startButton.addEventListener('click', () => {
     document.getElementById('inputsContainer').style.display = 'none';
@@ -31,10 +63,7 @@ const playGame = (() => {
     currentPlayer = playerOne;
 
     document.getElementById('playerTurn').innerHTML = `${currentPlayer.name}, it is you turn.`
-
   })
-
-
 
 })()
 
