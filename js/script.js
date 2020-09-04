@@ -1,16 +1,6 @@
 const playerFactory = (name, symbol) => {
-  let playerTurn = boardArray => {
-    let count = 0;
-
-    for(let i = 0; i < boardArray.length; i++){
-      if(boardArray[i] === 'X' || boardArray[i] === 'O'){
-        count++;
-      }
-    }
-
-    return count % 2 === 0 ? 1 : 2
-  }
-  return {name, symbol, playerTurn}
+  
+  return {name, symbol}
 }
 
 const board = (() => {
@@ -40,12 +30,17 @@ const playGame = (() => {
     count % 2 === 0 ? currentPlayer = playerOne : currentPlayer = playerTwo;
   }
 
+  function displayPlayerTurn(currentPlayer){
+    document.getElementById('playerTurn').innerHTML = `${currentPlayer.name}, it is your turn.`
+  }
+
   boardDiv.addEventListener('click', (e) => {
     if(e.target.innerHTML == ""){
       var index = e.target.getAttribute('data-index');
       e.target.innerHTML = currentPlayer.symbol;
       board.boardArray[index] = currentPlayer.symbol
       switchCurrentUser(board.boardArray)
+      displayPlayerTurn(currentPlayer)
     }
   })
 
