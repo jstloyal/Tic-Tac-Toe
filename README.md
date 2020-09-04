@@ -43,7 +43,7 @@ The player who succeeds in placing three of their marks in a horizontal, vertica
   </a>
 </p>
 
-[Project live link]()
+[Project live link](https://jstloyal.github.io/Tic-Tac-Toe/)
 
 ## Contributing
 
