@@ -7,7 +7,7 @@ let board = (() => {
   let boardArray = ['', '', '', '', '', '', '', '', ''];
 
   let checkWin = (currentPlayer) => {
-    var ans = false;
+    let ans = false;
     const WINNINGCOMBINATION = [
       [0, 1, 2],
       [3, 4, 5],
@@ -21,7 +21,7 @@ let board = (() => {
 
     WINNINGCOMBINATION.forEach(arr => {
       if(boardArray[arr[0]] == currentPlayer.symbol && boardArray[arr[1]] == currentPlayer.symbol && boardArray[arr[2]] == currentPlayer.symbol){
-        return ans = true;
+        ans = true;
       }
     })
 
@@ -115,12 +115,7 @@ let playGame = (() => {
   })
 
   resetButton.addEventListener('click', () => {
-    board.boardArray = ['', '', '', '', '', '', '', '', ''];
-    currentPlayer = playerOne;
-    document.getElementById('board').childNodes.forEach(node => {
-      node.innerHTML = '';
-    })
-    document.getElementById('playerTurn').innerHTML = `${currentPlayer.name}, it is your turn.`
+    document.location.reload();
   })
 
 })()

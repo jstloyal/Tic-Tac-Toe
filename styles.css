@@ -5,10 +5,10 @@ body {
 }
 
 .heading {
-  font-size: 4rem;
+  font-size: 2rem;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .my-form {
@@ -24,7 +24,7 @@ body {
 }
 
 .inputs input {
-  padding: 20px;
+  padding: 10px;
   color: #000;
   font-size: 1rem;
   border: 1px solid grey;
@@ -36,9 +36,9 @@ body {
   padding: 10px;
   background-color: black;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .gameDetails {
@@ -56,8 +56,8 @@ body {
 }
 
 .cell {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   background-color: #000;
   color: #fff;
   font-size: 3rem;
@@ -70,6 +70,6 @@ body {
 }
 
 .resetButtonDiv {
-  margin-top: 40px;
+  margin-top: 10px;
   text-align: center;
 }
