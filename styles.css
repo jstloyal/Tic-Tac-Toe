@@ -32,7 +32,7 @@ body {
 }
 
 .my-form button,
-.restart {
+.reset {
   padding: 10px;
   background-color: black;
   color: white;
@@ -69,7 +69,7 @@ body {
   cursor: pointer;
 }
 
-.winning-message {
+.resetButtonDiv {
   margin-top: 40px;
   text-align: center;
 }

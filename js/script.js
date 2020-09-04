@@ -53,6 +53,7 @@ let playGame = (() => {
   let playerTwoName;
   let startButton = document.getElementById('startButton');
   let boardDiv = document.getElementById('board');
+  let resetButton = document.getElementById('resetButton');
   let playerOne;
   let playerTwo;
   let currentPlayer;
@@ -111,6 +112,15 @@ let playGame = (() => {
     currentPlayer = playerOne;
 
     document.getElementById('playerTurn').innerHTML = `${currentPlayer.name}, it is you turn.`
+  })
+
+  resetButton.addEventListener('click', () => {
+    board.boardArray = ['', '', '', '', '', '', '', '', ''];
+    currentPlayer = playerOne;
+    document.getElementById('board').childNodes.forEach(node => {
+      node.innerHTML = '';
+    })
+    document.getElementById('playerTurn').innerHTML = `${currentPlayer.name}, it is your turn.`
   })
 
 })()
