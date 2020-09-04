@@ -48,7 +48,6 @@ body {
 
 .board {
   width: 100vw;
-  /* height: 40vh; */
   display: grid;
   justify-content: center;
   justify-items: center;
