@@ -2,6 +2,7 @@ const playerFactory = (name, symbol) => ({ name, symbol });
 
 const board = (() => {
   const boardArray = ['', '', '', '', '', '', '', '', ''];
+  const cells = Array.from(document.querySelectorAll('.cell'));
 
   const checkWin = (currentPlayer) => {
     let ans = false;
@@ -46,7 +47,19 @@ const board = (() => {
     return ans;
   };
 
-  return { boardArray, checkWin, checkDraw };
+  const updateBoardArray = (currentPlayer, index) => {
+    boardArray[index] = currentPlayer.symbol;
+  };
+
+  const render = () => {
+    boardArray.forEach((symbol, index) => {
+      cells[index].textContent = symbol;
+    });
+  };
+
+  return {
+    boardArray, checkWin, checkDraw, updateBoardArray, render,
+  };
 })();
 
 const playGame = () => {
@@ -81,24 +94,29 @@ const playGame = () => {
     ).innerHTML = `${currentPlayer.name}, it is your turn.`;
   }
 
-  boardDiv.addEventListener('click', (e) => {
-    if (e.target.innerHTML === '') {
-      const index = e.target.getAttribute('data-index');
-      e.target.innerHTML = currentPlayer.symbol;
-      board.boardArray[index] = currentPlayer.symbol;
+  const play = (event) => {
+    const index = event.target.getAttribute('data-index');
+
+    if (board.boardArray[index] === '') {
+      board.updateBoardArray(currentPlayer, index);
+      board.render();
 
       if (board.checkWin(currentPlayer)) {
         document.getElementById(
           'playerTurn',
         ).innerHTML = `${currentPlayer.name}, has won the game..`;
+        boardDiv.removeEventListener('click', play);
       } else if (board.checkDraw(currentPlayer)) {
         document.getElementById('playerTurn').innerHTML = 'The game is a tie.';
+        boardDiv.removeEventListener('click', play);
       } else {
         switchCurrentPlayer(board.boardArray);
         displayPlayerTurn(currentPlayer);
       }
     }
-  });
+  };
+
+  boardDiv.addEventListener('click', play);
 
   startButton.addEventListener('click', () => {
     playerOneName = document.getElementById('player1').value;
