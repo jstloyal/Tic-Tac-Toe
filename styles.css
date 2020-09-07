@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.my-form {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.inputs {
+  text-align: center;
+}
+
+.inputs input {
+  padding: 10px;
+  color: #000;
+  font-size: 1rem;
+  border: 1px solid grey;
+  outline-style: none;
+}
+
+.my-form button,
+.reset {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.gameDetails {
+  display: none;
+  font-size: 25px;
+}
+
+.board {
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  color: #fff;
+  font-size: 3rem;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.resetButtonDiv {
+  margin-top: 10px;
+  text-align: center;
+}
