@@ -1,0 +1,23 @@
+{
+  "name": "Tic-Tac-Toe",
+  "version": "1.0.0",
+  "description": "Tic-Tac-Toe is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstloyal/Tic-Tac-Toe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jstloyal/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/jstloyal/Tic-Tac-Toe#readme",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
