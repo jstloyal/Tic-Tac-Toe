@@ -1,6 +1,6 @@
-const playerFactory = (name, symbol) => ({ name, symbol });
+export const playerFactory = (name, symbol) => ({ name, symbol });
 
-const board = (() => {
+export const board = (() => {
   const boardArray = ['', '', '', '', '', '', '', '', ''];
   const cells = Array.from(document.querySelectorAll('.cell'));
 
@@ -62,7 +62,7 @@ const board = (() => {
   };
 })();
 
-const playGame = () => {
+export const playGame = () => {
   let playerOneName;
   let playerTwoName;
   const startButton = document.getElementById('startButton');
