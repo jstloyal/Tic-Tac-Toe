@@ -66,6 +66,12 @@ This project was built using these technologies.
 - ESlint
 - VSCode editor
 - Git-Flow
+- Babel
+- Jest
+
+### Testing
+
+Jest was used for testing and to successful run the test, first run `npm install` to install the dependencies i.e Jest and Babel, then run `npm run test` to run the tests.
 
 ## Contributors
 
