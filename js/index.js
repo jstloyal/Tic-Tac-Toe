@@ -78,5 +78,3 @@ const playGame = () => {
 };
 
 playGame();
-
-export default playGame;
