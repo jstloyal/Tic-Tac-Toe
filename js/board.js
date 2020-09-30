@@ -1,6 +1,6 @@
 const board = (() => {
-  const boardArray = ["", "", "", "", "", "", "", "", ""];
-  const cells = Array.from(document.querySelectorAll(".cell"));
+  const boardArray = ['', '', '', '', '', '', '', '', ''];
+  const cells = Array.from(document.querySelectorAll('.cell'));
 
   const checkWin = (currentPlayer) => {
     let ans = false;
@@ -17,9 +17,9 @@ const board = (() => {
 
     WINNINGCOMBINATION.forEach((arr) => {
       if (
-        boardArray[arr[0]] === currentPlayer.symbol &&
-        boardArray[arr[1]] === currentPlayer.symbol &&
-        boardArray[arr[2]] === currentPlayer.symbol
+        boardArray[arr[0]] === currentPlayer.symbol
+        && boardArray[arr[1]] === currentPlayer.symbol
+        && boardArray[arr[2]] === currentPlayer.symbol
       ) {
         ans = true;
       }
@@ -33,7 +33,7 @@ const board = (() => {
     let count = 0;
 
     boardArray.forEach((x) => {
-      if (x === "X" || x === "O") {
+      if (x === 'X' || x === 'O') {
         count += 1;
       }
     });
@@ -55,12 +55,32 @@ const board = (() => {
     });
   };
 
+  const switchCurrentPlayer = (playerOne, playerTwo) => {
+    let count = 0;
+    let player;
+
+    for (let i = 0; i < boardArray.length; i += 1) {
+      if (boardArray[i] === 'X' || boardArray[i] === 'O') {
+        count += 1;
+      }
+    }
+
+    if (count % 2 === 0) {
+      player = playerOne;
+    } else {
+      player = playerTwo;
+    }
+
+    return player;
+  };
+
   return {
     boardArray,
     checkWin,
     checkDraw,
     updateBoardArray,
     render,
+    switchCurrentPlayer,
   };
 })();
 
